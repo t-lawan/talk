@@ -1,0 +1,43 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.no-border {
+border: 0;
+box-shadow: none;
+}
+a:link {
+  text-decoration: none;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus {
+    outline:none;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+  background-color: #d8d4d4;
+}
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active{
+  background-color: #d8d4d4;
+}
+
+a{
+  color: #929294;
+}
+
+#flash-message{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
