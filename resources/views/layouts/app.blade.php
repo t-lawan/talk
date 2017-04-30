@@ -8,7 +8,7 @@
 
     <body>
 
-        <div class='app'>
+        <div class='container-fluid col-md-10 col-md-offset-1'>
           @if (Auth::guest())
             @include('layouts.nav.guest')
           @else

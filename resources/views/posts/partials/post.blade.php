@@ -7,9 +7,6 @@
           <h4 class="mt-0">
 
               {{$post->user->name}} <small class="text-muted"> <i>Posted on {{$post->created_at->toFormattedDateString()}}</i></small>
-
-
-
           </h4>
         </div>
 
@@ -27,12 +24,6 @@
       </div>
 
         <p class="lead">{{$post->body}}</p>
-
-
-
-
-
-
 
     </div>
 

@@ -1,10 +1,6 @@
 <!-- Create Comment-->
-<div class="container create-posts">
-  <div class="row">
+<div class="container-fluid create-posts">
 
-
-
-      <div class="col-md-12">
         <div class="panel panel-default ">
 
             <form method="post" action="/posts/{{$post->id}}/comments">
@@ -24,13 +20,11 @@
 
         </div>
 
-    </div>
 
-  </div>
+
+
 </div>
-<style>
 
-</style>
 
 <script>
 
