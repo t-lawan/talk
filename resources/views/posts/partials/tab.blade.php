@@ -24,8 +24,7 @@
                 </div>
               </div>
 
-              <div class="panel panel-default">
-                <div class="panel-body">
+          
                   <div class="tab-content">
                       <div class="tab-pane active" id="showtopposts" >
 
@@ -48,8 +47,7 @@
                       </div>
 
                   </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
