@@ -1,4 +1,7 @@
 <?php
+use App\Post;
+use App\User;
+use App\Comment;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,13 +15,33 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
+$factory->define(App\User::class, function (Faker\Generator $faker)
+{
+    return [
+        'name' => $faker->firstName,
+        'email' => $faker->safeEmail,
+        'password' => bcrypt('thomas'),
+        'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+
 
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'user_id' => rand(1,2),
+        'body' => $faker->sentence(rand(6,10),true),
+        'private' => rand(0,1),
+    ];
+});
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+
+
+    return [
+        'user_id' => rand(1,2),
+        'post_id' => rand(1,10),
+        'body' => $faker->sentence(rand(6,10),true),
+
     ];
 });
