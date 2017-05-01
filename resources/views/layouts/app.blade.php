@@ -1,8 +1,9 @@
 <html>
     <head>
-        <title>App Name - @yield('title')</title>
+        <title>Talk</title>
 
         @include('layouts.links')
+        
 
     </head>
 
