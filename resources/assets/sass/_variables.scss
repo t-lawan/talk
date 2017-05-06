@@ -1,6 +1,6 @@
 
 // Body
-$body-bg: #292929;
+$body-bg: lighten(#1c1c1c, 10%);
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
