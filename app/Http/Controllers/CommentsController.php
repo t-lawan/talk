@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
+use App\Comment;
 
 
 class CommentsController extends Controller
@@ -13,8 +14,11 @@ class CommentsController extends Controller
     public function store(Post $post)
     {
       $this->validate(request(),['body' => 'required']);
-      $post->addComment(auth()->id(),request('body'));
-      return $post->comments();
+
+      $comment = new Comment(request(['body']));
+      $comment->user_id = auth()->id();
+      $post->addComment($comment);
+
       //redirect to page
       return back();
     }

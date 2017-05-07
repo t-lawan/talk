@@ -17,10 +17,8 @@ class Post extends Model
       return $this->hasMany(Comment::class);
     }
 
-    public function addComment($body)
+    public function addComment(Comment $comment)
     {
-
-        $this->comments()->create(compact('user_id','body'));
-
+        $this->comments()->save($comment);
     }
 }
