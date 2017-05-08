@@ -14,6 +14,7 @@
 Route::get('/', 'PostsController@index');
 Route::get('posts/{post}','PostsController@show');
 Route::post('/posts','PostsController@store');
+Route::put('/posts/{post}/privacy', 'PostsController@changePrivacy');
 Route::delete('/posts/{post}','PostsController@destroy');
 
 

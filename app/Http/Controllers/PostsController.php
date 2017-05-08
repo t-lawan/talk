@@ -47,4 +47,24 @@ class PostsController extends Controller
       //redirect to page
       return redirect('/');
     }
+
+    public function changePrivacy(Post $post)
+    {
+      if($post->private === 0)
+      {
+        $post->private = 1;
+        $post->save();
+        return back();
+      }
+        $post->private = 0;
+        $post->save();
+        return back();
+    }
+
+    public function destroy(Post $post)
+    {
+      $post->delete();
+      return back();
+
+    }
 }

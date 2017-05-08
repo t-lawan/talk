@@ -13,8 +13,6 @@ class CommentsController extends Controller
     //
     public function store(Post $post)
     {
-      $this->validate(request(),['body' => 'required']);
-
       $comment = new Comment(request(['body']));
       $comment->user_id = auth()->id();
       $post->addComment($comment);

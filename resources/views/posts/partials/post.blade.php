@@ -1,37 +1,43 @@
 <div class="panel panel-default">
   <div class="panel-body">
-    <a href="/posts/{{$post->id}}" class="post">
+
       <div class="media" >
         <img class="d-flex align-self-start mr-3 img-rounded img-responsive" src="{{$post->user->image->location}}" alt="Generic placeholder image" width="60" height="60">
         <div class="media-body">
           <div class="row">
-            <div class="col-sm-10">
+            <div class="col-sm-9">
               <h4 class="mt-0">
 
                   {{$post->user->name}} <small class="text-muted"> <i>Posted on {{$post->created_at->toFormattedDateString()}}</i></small>
               </h4>
             </div>
 
+            @if($post->user->id === auth()->id())
             <div class="col-sm-1">
-              <i class="material-icons md-18 align-right ">
+
                 @if($post->private === 0)
-                  lock_open
+                  <?php $lock = "lock_open"  ?>
                 @else
-                  lock_outline
+                  <?php $lock = "lock_outline" ?>
                 @endif
 
-              </i>
+                @include('posts.partials.form.changeprivacy')
+
             </div>
+            <div class="col-sm-1">
+              @include('posts.partials.form.delete')
+            </div>
+            @endif
 
           </div>
-
-            <p class="lead">{{$post->body}}</p>
-
+              <a href="/posts/{{$post->id}}" class="post">
+                <p class="lead">{{$post->body}}</p>
+              </a>
         </div>
 
       </div>
 
-    </a>
+
 
   </div>
 </div>
