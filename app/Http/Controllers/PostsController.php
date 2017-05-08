@@ -48,6 +48,19 @@ class PostsController extends Controller
       return redirect('/');
     }
 
+    public function update(Post $post)
+    {
+        //
+        $this->validate(request(),[
+          'body' => 'required'
+        ]);
+
+        $post->body = request('body');
+        $post->save();
+        return back();
+
+    }
+
     public function changePrivacy(Post $post)
     {
       if($post->private === 0)
