@@ -20,7 +20,7 @@ Route::delete('/posts/{post}','PostsController@destroy');
 
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
-Route::delete('/posts/{post}/comments/{comment}','PostsController@destroy');
+Route::delete('/comments/{comment}','CommentsController@destroy');
 
 Route::get('profile/{user}', 'UsersController@show');
 Route::get('/settings/{user}','UsersController@edit');

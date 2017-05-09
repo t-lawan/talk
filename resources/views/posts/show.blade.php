@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
+
   <div class="col-md-8 col-md-offset-2">
     @include('posts.partials.post')
 
@@ -12,12 +12,13 @@
     </ul>
 
   </div>
+
   <div class="col-md-8 col-md-offset-2 ">
     @include('comments.create')
   </div>
 
 
-</div>
+
 
 
 @endsection

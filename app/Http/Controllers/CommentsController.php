@@ -13,6 +13,11 @@ class CommentsController extends Controller
     //
     public function store(Post $post)
     {
+
+      $this->validate(request(),[
+        'body' => 'required'
+      ]);
+
       $comment = new Comment(request(['body']));
       $comment->user_id = auth()->id();
       $post->addComment($comment);
@@ -20,4 +25,23 @@ class CommentsController extends Controller
       //redirect to page
       return back();
     }
+
+    public function update(Comment $comment)
+    {
+      $this->validate(request(),[
+        'body' => 'required'
+      ]);
+
+      $comment->body = request('body');
+      $comment->save();
+      return back();
+    }
+
+    public function destroy(Comment $comment)
+    {
+      $comment->delete();
+      return back();
+    }
+
+
 }
