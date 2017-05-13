@@ -13,10 +13,7 @@ class PostsController extends Controller
 {
     //
 
-    public function __constructor()
-    {
-      $this->middleware('auth')->except(['index','show']);
-    }
+
 
     public function index()
     {
