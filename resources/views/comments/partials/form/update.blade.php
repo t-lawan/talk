@@ -5,7 +5,6 @@
       <div class="form-group">
               <textarea class="form-control" rows="3" id="body" type="text" name="body">{{ $comment->body}}</textarea>
               <button type="submit" class="btn btn-block">Change Comment</button>
-
       </div>
-  </form>  
+  </form>
 </div>
