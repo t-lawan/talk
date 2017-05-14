@@ -19,9 +19,7 @@ class PostsController extends Controller
     {
       $posts = Post::orderBy('created_at','desc')->get();
 
-      $images = Image::all();
-
-      return view('posts.index',compact('posts','images'));
+      return view('posts.index',compact('posts'));
     }
 
     public function show(Post $post)
