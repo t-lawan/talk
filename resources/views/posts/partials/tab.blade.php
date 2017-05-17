@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container-fluid">
 
 
-    <div class="row">
+
 
         <div class="col-md-8 col-md-offset-2">
 
@@ -24,7 +24,7 @@
                 </div>
               </div>
 
-          
+
                   <div class="tab-content">
                       <div class="tab-pane active" id="showtopposts" >
 
@@ -49,5 +49,5 @@
                   </div>
 
         </div>
-    </div>
+
 </div>

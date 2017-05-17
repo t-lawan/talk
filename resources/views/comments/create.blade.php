@@ -1,8 +1,5 @@
 <!-- Create Comment-->
 
-
-
-
         <div class="panel panel-default col-md-10 col-md-offset-1" id="comment_form">
           <div class="panel-body">
             <form method="post" action="/posts/{{$post->id}}/comments">
