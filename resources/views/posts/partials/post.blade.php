@@ -3,11 +3,11 @@
 
       <div class="media" >
         <div class="row">
-          <div class="col-xs-8">
+          <div class="col-xs-5">
             <img class="d-flex align-self-start mr-3 img-rounded img-responsive" src="{{$post->user->image->location}}" alt="Generic placeholder image" width="60" height="60">
           </div>
           @if($post->user->id === auth()->id())
-          <div class="col-xs-1">
+          <div class="col-xs-2">
 
               @if($post->private === 0)
                 <?php $lock = "lock_open"  ?>
@@ -19,7 +19,7 @@
 
           </div>
 
-          <div class="col-xs-1">
+          <div class="col-xs-2">
             <button class="btn btn-secondary" data-toggle="collapse" data-target="#post{{$post->id}}">
                <i class="material-icons md-18 align-right ">
                  edit
@@ -27,7 +27,7 @@
              </button>
           </div>
 
-          <div class="col-sm-1">
+          <div class="col-xs-2">
             @include('posts.partials.form.delete')
           </div>
           @endif
