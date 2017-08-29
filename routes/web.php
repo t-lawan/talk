@@ -1,4 +1,5 @@
 <?php
+use App\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,6 +11,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/test', function () {
+    $posts = Post::with('user')->orderBy('created_at','desc')->get();
+
+    return view('test',compact('posts'));
+    //return ["A","B","C","D"];
+});
+
+
 
 Route::get('/', 'PostsController@index');
 Route::get('posts/{post}','PostsController@show');

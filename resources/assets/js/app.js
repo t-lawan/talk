@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+window.axios = require('axios');
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -15,6 +17,16 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: '#app'
+//Vue.component('post', require('./components/Post.vue'));
+
+new Vue({
+    el: '#test',
+    data: {
+      posts: []
+
+    },
+
+    mounted() {
+      axios.get('/test').then(response => this.posts = response.data);
+    },
 });

@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
 
-    protected $toTruncate = array('users', 'posts', 'comments', 'images');
+    protected $toTruncate = array('users', 'posts', 'comments','images');
     /**
      * Run the database seeds.
      *

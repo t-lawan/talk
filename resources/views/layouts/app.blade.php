@@ -37,6 +37,10 @@
           @endif
         </div>
 
+@include('layouts.scripts')
+
+
+
 
       @include('layouts.footer')
 
